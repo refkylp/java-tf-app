@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME = "refiakayaalp/java-app:java-f-${BUILD_NUMBER}"
+        IMAGE_NAME = "refiakayaalp/java-app:java-maven-${BUILD_NUMBER}"
     }
 
     stages {
