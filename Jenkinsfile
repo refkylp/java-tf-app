@@ -43,7 +43,7 @@ pipeline {
         stage('provision server') {
            steps {
                 script {
-                    dir('terraform') {
+                    dir('Terraform') {
                         withCredentials([[$class: 'AmazonWebServicesCredentialsBinding',credentialsId: "AWS-ID",accessKeyVariable: 'AWS_ACCESS_KEY_ID',secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
                             sh "terraform init"
                             sh "terraform apply --auto-approve"
