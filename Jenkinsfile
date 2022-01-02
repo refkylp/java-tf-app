@@ -1,7 +1,10 @@
+#!/usr/bin/env groovy
+
 pipeline {
     agent any
 
     tools {
+         maven 'maven'
          terraform 'tf'
     }
 
@@ -49,7 +52,6 @@ pipeline {
             
             steps {
                 script {
-                    echo "provisionin server"
                     echo "waiting for ec2 server to initialize"
                     sleep(time: 90, unit: "SECONDS")
                     echo "deploying docker image to ec2"
